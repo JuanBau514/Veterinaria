@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package veterinaria.vista;
 
@@ -8,7 +8,7 @@ package veterinaria.vista;
  *
  * @author juanpbaucl514
  */
-public class newUsuario extends javax.swing.JFrame {
+public class newUsuario extends javax.swing.JPanel {
 
     /**
      * Creates new form newUsuario
@@ -26,80 +26,100 @@ public class newUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        domLbl1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
-        nameLbl = new javax.swing.JLabel();
-        nameTxt = new javax.swing.JTextField();
-        apPLbl = new javax.swing.JLabel();
-        apPTxt = new javax.swing.JTextField();
-        apMLbl = new javax.swing.JLabel();
-        apMTxt = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        nMascotas = new javax.swing.JLabel();
-        BoxNMascotas = new javax.swing.JComboBox<>();
-        domTxt = new javax.swing.JTextField();
-        button = new javax.swing.JButton();
-        phoneLbl = new javax.swing.JLabel();
-        apMTxt1 = new javax.swing.JTextField();
-        NomMascota = new javax.swing.JLabel();
-        NomMascota1 = new javax.swing.JLabel();
-        domTxt1 = new javax.swing.JTextField();
-
-        domLbl1.setText("Cantidad de Mascotas");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        userSearch = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        deleteButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        title.setText("Registrar nuevo Usuario");
+        title.setText("Usuarios");
 
-        nameLbl.setText("Nombre");
-
-        apPLbl.setText("Apellido Paterno");
-
-        apMLbl.setText("Apellido Materno");
-
-        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator1.setPreferredSize(new java.awt.Dimension(200, 10));
-
-        nMascotas.setText("Cantidad de Mascotas");
-
-        BoxNMascotas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        domTxt.setToolTipText("");
-        domTxt.addActionListener(new java.awt.event.ActionListener() {
+        searchButton.setBackground(new java.awt.Color(18, 90, 173));
+        searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchButton.setText("Buscar");
+        searchButton.setBorderPainted(false);
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                domTxtActionPerformed(evt);
+                searchButtonActionPerformed(evt);
             }
         });
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        button.setForeground(new java.awt.Color(255, 255, 255));
-        button.setText("Registrar");
-        button.setBorderPainted(false);
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        button.addActionListener(new java.awt.event.ActionListener() {
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "Apellido P.", "Apellido M.", "Domicilio", "Teléfono"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable1MousePressed(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        deleteButton.setBackground(new java.awt.Color(18, 90, 173));
+        deleteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("Borrar");
+        deleteButton.setBorderPainted(false);
+        deleteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
             }
         });
 
-        phoneLbl.setText("Teléfono");
-
-        NomMascota.setText("Dirección");
-
-        NomMascota1.setText("Nombre de las mascotas");
-
-        domTxt1.setToolTipText("");
-        domTxt1.addActionListener(new java.awt.event.ActionListener() {
+        editButton.setBackground(new java.awt.Color(18, 90, 173));
+        editButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        editButton.setForeground(new java.awt.Color(255, 255, 255));
+        editButton.setText("Editar");
+        editButton.setBorderPainted(false);
+        editButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                domTxt1ActionPerformed(evt);
+                editButtonActionPerformed(evt);
+            }
+        });
+
+        addButton.setBackground(new java.awt.Color(18, 90, 173));
+        addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("Nuevo");
+        addButton.setBorderPainted(false);
+        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
             }
         });
 
@@ -111,87 +131,41 @@ public class newUsuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(nameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(223, 223, 223))
-                                    .addComponent(nameTxt)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(apPLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(182, 182, 182))
-                                    .addComponent(apPTxt)
-                                    .addGroup(bgLayout.createSequentialGroup()
-                                        .addComponent(apMLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(180, 180, 180))
-                                    .addComponent(apMTxt))
-                                .addGap(68, 68, 68))
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(apMTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(phoneLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(domTxt)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(nMascotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(220, 220, 220))
-                            .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BoxNMascotas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NomMascota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NomMascota1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(domTxt1))
-                        .addGap(72, 72, 72))
-                    .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(553, 553, 553))))
+                        .addGap(699, 699, 699))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(427, 427, 427)
+                                .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(userSearch)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(searchButton)))
+                        .addGap(50, 50, 50))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+                .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(userSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(nameLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(apPLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(apPTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(apMLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(apMTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(phoneLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(apMTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88))
-                    .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(26, 26, 26))))
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(nMascotas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BoxNMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(NomMascota1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(domTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(NomMascota)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(domTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteButton)
+                    .addComponent(editButton)
+                    .addComponent(addButton))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -205,11 +179,11 @@ public class newUsuario extends javax.swing.JFrame {
             .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 848, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -218,84 +192,76 @@ public class newUsuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGap(0, 424, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
-       
-    }//GEN-LAST:event_buttonActionPerformed
-
-    private void domTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_domTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_domTxtActionPerformed
-
-    private void domTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_domTxt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_domTxt1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            DAOUsers dao = new DAOUsersImpl();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            dao.listar(userSearch.getText()).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
+
+    }//GEN-LAST:event_jTable1MousePressed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        DAOUsers dao = new DAOUsersImpl();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRows().length < 1) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar uno o más usuarios a eliminar.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+        } else {
+            for (int i : jTable1.getSelectedRows()) {
+                try {
+                    dao.eliminar((int) jTable1.getValueAt(i, 0));
+                    model.removeRow(i);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(newUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(newUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(newUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(newUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new newUsuario().setVisible(true);
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        if (jTable1.getSelectedRow() > -1) {
+            try {
+                int userId = (int) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
+                DAOUsers dao = new DAOUsersImpl();
+                Dashboard.ShowJPanel(new UpUsers(dao.getUserById(userId)));
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-        });
-    }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar el usuario a editar.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_editButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        Dashboard.ShowJPanel(new UpUsers());
+    }//GEN-LAST:event_addButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> BoxNMascotas;
-    private javax.swing.JLabel NomMascota;
-    private javax.swing.JLabel NomMascota1;
-    private javax.swing.JLabel apMLbl;
-    private javax.swing.JTextField apMTxt;
-    private javax.swing.JTextField apMTxt1;
-    private javax.swing.JLabel apPLbl;
-    private javax.swing.JTextField apPTxt;
+    private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
-    private javax.swing.JButton button;
-    private javax.swing.JLabel domLbl1;
-    private javax.swing.JTextField domTxt;
-    private javax.swing.JTextField domTxt1;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel nMascotas;
-    private javax.swing.JLabel nameLbl;
-    private javax.swing.JTextField nameTxt;
-    private javax.swing.JLabel phoneLbl;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton searchButton;
     private javax.swing.JLabel title;
+    private javax.swing.JTextField userSearch;
     // End of variables declaration//GEN-END:variables
 }

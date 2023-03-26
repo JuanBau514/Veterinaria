@@ -36,12 +36,15 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }
     
     public void InitContenido(){
-        inicioApp appInicio = new inicioApp();
-        appInicio.setSize(Contenido.getSize());
-        appInicio.setLocation(0,0);
+        mostrarPanel(new inicioApp());
+    }
 
+    public static void mostrarPanel(JPanel panel){
+        panel.setSize(750,450);
+        panel.setLocation(0,0);
+       
         Contenido.removeAll();
-        Contenido.add(appInicio, BorderLayout.CENTER);
+        Contenido.add(panel,BorderLayout.CENTER);
         Contenido.revalidate();
         Contenido.repaint();
     }
@@ -227,7 +230,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(newUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Titulo.setBackground(new java.awt.Color(0, 102, 153));
@@ -244,7 +247,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(351, 351, 351)
                 .addGroup(TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TituloLayout.createSequentialGroup()
-                        .addComponent(Usos, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
+                        .addComponent(Usos, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                         .addGap(503, 503, 503))
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49))
@@ -270,7 +273,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         );
         ContenidoLayout.setVerticalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 527, Short.MAX_VALUE)
         );
 
         Mensaje.setText("La mejor atencion para su mascota :D");
@@ -286,8 +289,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(Mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(237, 237, 237))
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
             .addComponent(Titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -320,7 +323,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrincipalActionPerformed
-        // TODO add your handling code here:
+        // Inicializacion del compoente de la ventana principal
+        mostrarPanel(new inicioApp());
     }//GEN-LAST:event_PrincipalActionPerformed
 
     private void HistoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoriaActionPerformed

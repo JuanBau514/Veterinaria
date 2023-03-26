@@ -4,6 +4,8 @@
  */
 package veterinaria.veterinaria;
 
+import veterinaria.vista.*;
+
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import java.awt.BorderLayout;
@@ -30,6 +32,18 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         initComponents();
         InitStyles();
         ajustarFecha();
+        InitContenido();
+    }
+    
+    public void InitContenido(){
+        inicioApp appInicio = new inicioApp();
+        appInicio.setSize(Contenido.getSize());
+        appInicio.setLocation(0,0);
+
+        Contenido.removeAll();
+        Contenido.add(appInicio, BorderLayout.CENTER);
+        Contenido.revalidate();
+        Contenido.repaint();
     }
     
     public void InitStyles () {
@@ -76,6 +90,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         Mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1100, 723));
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -190,7 +205,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(newConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         Titulo.setBackground(new java.awt.Color(0, 102, 153));
@@ -233,7 +248,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         );
         ContenidoLayout.setVerticalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         Mensaje.setText("La mejor atencion para su mascota :D");
@@ -251,7 +266,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                         .addGap(237, 237, 237))
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
             .addComponent(Titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(

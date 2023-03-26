@@ -83,6 +83,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         Historia = new javax.swing.JButton();
         newConsulta = new javax.swing.JButton();
         newUsuario = new javax.swing.JButton();
+        newUsuario1 = new javax.swing.JButton();
         Titulo = new javax.swing.JPanel();
         Usos = new javax.swing.JLabel();
         Fecha = new javax.swing.JLabel();
@@ -175,6 +176,24 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             }
         });
 
+        newUsuario1.setBackground(new java.awt.Color(0, 102, 153));
+        newUsuario1.setFont(new java.awt.Font("Open Sans Semibold", 1, 18)); // NOI18N
+        newUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        newUsuario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account-multiple.png"))); // NOI18N
+        newUsuario1.setText("Lista Usuarios");
+        newUsuario1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(0, 0, 0)));
+        newUsuario1.setBorderPainted(false);
+        newUsuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newUsuario1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        newUsuario1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        newUsuario1.setIconTextGap(30);
+        newUsuario1.setVerifyInputWhenFocusTarget(false);
+        newUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUsuario1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
         MenuLayout.setHorizontalGroup(
@@ -189,6 +208,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             .addComponent(Historia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(newConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
             .addComponent(newUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+            .addComponent(newUsuario1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +225,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(newConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(newUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         Titulo.setBackground(new java.awt.Color(0, 102, 153));
@@ -222,7 +244,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(351, 351, 351)
                 .addGroup(TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TituloLayout.createSequentialGroup()
-                        .addComponent(Usos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Usos, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                         .addGap(503, 503, 503))
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49))
@@ -265,7 +287,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                         .addComponent(Mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(237, 237, 237))
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(35, 35, 35)
                         .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
             .addComponent(Titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -278,9 +300,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -314,6 +335,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_newUsuarioActionPerformed
 
+    private void newUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newUsuario1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -342,6 +367,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel appName;
     private javax.swing.JButton newConsulta;
     private javax.swing.JButton newUsuario;
+    private javax.swing.JButton newUsuario1;
     // End of variables declaration//GEN-END:variables
 
 }

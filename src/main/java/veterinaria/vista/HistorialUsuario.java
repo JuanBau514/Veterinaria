@@ -8,12 +8,12 @@ package veterinaria.vista;
  *
  * @author juanpbaucl514
  */
-public class newUsuario extends javax.swing.JPanel {
+public class HistorialUsuario extends javax.swing.JPanel {
 
     /**
-     * Creates new form newUsuario
+     * Creates new form HistorialUsuario
      */
-    public newUsuario() {
+    public HistorialUsuario() {
         initComponents();
     }
 
@@ -41,7 +41,7 @@ public class newUsuario extends javax.swing.JPanel {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        title.setText("Usuarios");
+        title.setText("Usuaros // Dueños de mascotas");
 
         searchButton.setBackground(new java.awt.Color(18, 90, 173));
         searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -131,6 +131,9 @@ public class newUsuario extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(699, 699, 699))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
@@ -142,7 +145,6 @@ public class newUsuario extends javax.swing.JPanel {
                                 .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(userSearch)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -183,7 +185,7 @@ public class newUsuario extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 764, Short.MAX_VALUE)
+            .addGap(0, 889, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -202,14 +204,7 @@ public class newUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        try {
-            DAOUsers dao = new DAOUsersImpl();
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            model.setRowCount(0);
-            dao.listar(userSearch.getText()).forEach((u) -> model.addRow(new Object[]{u.getId(), u.getName(), u.getLast_name_p(), u.getLast_name_m(), u.getDomicilio(), u.getTel()}));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+   
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
@@ -217,38 +212,14 @@ public class newUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_jTable1MousePressed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        DAOUsers dao = new DAOUsersImpl();
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        if (jTable1.getSelectedRows().length < 1) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar uno o más usuarios a eliminar.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-        } else {
-            for (int i : jTable1.getSelectedRows()) {
-                try {
-                    dao.eliminar((int) jTable1.getValueAt(i, 0));
-                    model.removeRow(i);
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
+    
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        if (jTable1.getSelectedRow() > -1) {
-            try {
-                int userId = (int) jTable1.getValueAt(jTable1.getSelectedRow(), 0);
-                DAOUsers dao = new DAOUsersImpl();
-                Dashboard.ShowJPanel(new UpUsers(dao.getUserById(userId)));
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "Debes seleccionar el usuario a editar.\n", "AVISO", javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
+         
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        Dashboard.ShowJPanel(new UpUsers());
     }//GEN-LAST:event_addButtonActionPerformed
 
 

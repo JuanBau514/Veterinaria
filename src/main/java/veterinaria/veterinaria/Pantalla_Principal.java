@@ -36,17 +36,13 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }
     
     public void InitContenido(){
-        mostrarPanel(new inicioApp());
     }
 
     public static void mostrarPanel(JPanel panel){
         panel.setSize(750,450);
         panel.setLocation(0,0);
        
-        Contenido.removeAll();
-        Contenido.add(panel,BorderLayout.CENTER);
-        Contenido.revalidate();
-        Contenido.repaint();
+       
     }
     
     public void InitStyles () {
@@ -324,7 +320,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     private void PrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrincipalActionPerformed
         // Inicializacion del compoente de la ventana principal
-        mostrarPanel(new inicioApp());
     }//GEN-LAST:event_PrincipalActionPerformed
 
     private void HistoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoriaActionPerformed

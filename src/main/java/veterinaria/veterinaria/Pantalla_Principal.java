@@ -36,13 +36,19 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }
     
     public void InitContenido(){
+        contenido.setLayout(new BorderLayout());
+        mostrarPanel(new InicioApp());
     }
 
     public static void mostrarPanel(JPanel panel){
-        panel.setSize(750,450);
+        panel.setSize(750, 430);
         panel.setLocation(0,0);
-       
-       
+
+        contenido.removeAll();
+        contenido.add(panel, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+      
     }
     
     public void InitStyles () {
@@ -86,7 +92,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         Titulo = new javax.swing.JPanel();
         Usos = new javax.swing.JLabel();
         Fecha = new javax.swing.JLabel();
-        Contenido = new javax.swing.JPanel();
+        contenido = new javax.swing.JPanel();
         Mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -226,7 +232,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(newUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         Titulo.setBackground(new java.awt.Color(0, 102, 153));
@@ -258,18 +264,18 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        Contenido.setBackground(new java.awt.Color(255, 255, 255));
-        Contenido.setAutoscrolls(true);
+        contenido.setBackground(new java.awt.Color(255, 255, 255));
+        contenido.setAutoscrolls(true);
 
-        javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
-        Contenido.setLayout(ContenidoLayout);
-        ContenidoLayout.setHorizontalGroup(
-            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
+        contenido.setLayout(contenidoLayout);
+        contenidoLayout.setHorizontalGroup(
+            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        ContenidoLayout.setVerticalGroup(
-            ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 527, Short.MAX_VALUE)
+        contenidoLayout.setVerticalGroup(
+            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         Mensaje.setText("La mejor atencion para su mascota :D");
@@ -285,9 +291,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(Mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(237, 237, 237))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
             .addComponent(Titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -300,7 +306,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -320,22 +326,28 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     private void PrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrincipalActionPerformed
         // Inicializacion del compoente de la ventana principal
+        mostrarPanel(new InicioApp());
     }//GEN-LAST:event_PrincipalActionPerformed
 
     private void HistoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoriaActionPerformed
         // TODO add your handling code here:
+        mostrarPanel(new HistorialClinico());
     }//GEN-LAST:event_HistoriaActionPerformed
 
     private void newConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newConsultaActionPerformed
         // TODO add your handling code here:
+        mostrarPanel(new nuevaConsulta());
     }//GEN-LAST:event_newConsultaActionPerformed
 
     private void newUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsuarioActionPerformed
         // TODO add your handling code here:
+        mostrarPanel(new HistorialUsuario());
     }//GEN-LAST:event_newUsuarioActionPerformed
 
     private void newUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUsuario1ActionPerformed
         // TODO add your handling code here:
+        mostrarPanel(new nuevoUsuario());
+
     }//GEN-LAST:event_newUsuario1ActionPerformed
 
     /**
@@ -354,7 +366,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JPanel Contenido;
     private javax.swing.JLabel Fecha;
     private javax.swing.JButton Historia;
     private javax.swing.JLabel Mensaje;
@@ -364,6 +375,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Usos;
     private javax.swing.JLabel Usos1;
     private javax.swing.JLabel appName;
+    private static javax.swing.JPanel contenido;
     private javax.swing.JButton newConsulta;
     private javax.swing.JButton newUsuario;
     private javax.swing.JButton newUsuario1;

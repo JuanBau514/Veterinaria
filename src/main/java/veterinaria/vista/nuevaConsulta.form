@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="789" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="799" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -95,11 +95,6 @@
                                       <EmptySpace min="161" pref="161" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="dateTxt" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="edTxt" alignment="1" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="edLbl" max="32767" attributes="0"/>
-                                      <EmptySpace min="227" pref="227" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -123,13 +118,15 @@
                                   <Component id="descTxt" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="stockTxt" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <Component id="stockLbl" max="32767" attributes="0"/>
-                                              <EmptySpace min="94" pref="94" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="dispLbl" max="32767" attributes="0"/>
@@ -179,9 +176,9 @@
                                   <Component id="dispLbl" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="stockTxt" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="dispTxt" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="dispTxt" pref="30" max="32767" attributes="0"/>
+                                  <Component id="jRadioButton1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="ejemLbl" max="32767" attributes="0"/>
@@ -205,12 +202,9 @@
                               <Component id="authorTxt" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Component id="catLbl" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="catTxt" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="edLbl" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="edTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="catTxt" min="-2" pref="76" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -221,43 +215,36 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="title">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Subir nuevo Libro"/>
+                <Property name="text" type="java.lang.String" value="Nueva consulta medica"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="titleLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="T&#xed;tulo"/>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="titleTxt">
             </Component>
             <Component class="javax.swing.JLabel" name="dateLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fecha de Publicaci&#xf3;n"/>
+                <Property name="text" type="java.lang.String" value="Due&#xf1;o"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="dateTxt">
             </Component>
             <Component class="javax.swing.JLabel" name="authorLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Autor"/>
+                <Property name="text" type="java.lang.String" value="Edad"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="authorTxt">
             </Component>
             <Component class="javax.swing.JLabel" name="catLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Categor&#xed;a"/>
+                <Property name="text" type="java.lang.String" value="Descripcion"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="catTxt">
-            </Component>
-            <Component class="javax.swing.JLabel" name="edLbl">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Edici&#xf3;n"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="edTxt">
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
               <Properties>
@@ -272,7 +259,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="langLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Idioma"/>
+                <Property name="text" type="java.lang.String" value="Edad"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="langTxt">
@@ -282,7 +269,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="pagsLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="P&#xe1;ginas"/>
+                <Property name="text" type="java.lang.String" value="Tratamiento"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="pagsTxt">
@@ -292,7 +279,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="descLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Descripci&#xf3;n"/>
+                <Property name="text" type="java.lang.String" value="Diagnostico"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="descTxt">
@@ -302,12 +289,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="stockLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Stock"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="stockTxt">
-              <Properties>
+                <Property name="text" type="java.lang.String" value="Medicacion"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
@@ -318,12 +300,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="dispLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Disponibles"/>
+                <Property name="text" type="java.lang.String" value="Estado"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="ejemLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ejemplares"/>
+                <Property name="text" type="java.lang.String" value="Medicacion"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="ejemTxt">
@@ -351,6 +333,11 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jRadioButton1"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

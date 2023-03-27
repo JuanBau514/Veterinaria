@@ -37,8 +37,6 @@ public class nuevaConsulta extends javax.swing.JPanel {
         authorTxt = new javax.swing.JTextField();
         catLbl = new javax.swing.JLabel();
         catTxt = new javax.swing.JTextField();
-        edLbl = new javax.swing.JLabel();
-        edTxt = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         langLbl = new javax.swing.JLabel();
         langTxt = new javax.swing.JTextField();
@@ -47,55 +45,51 @@ public class nuevaConsulta extends javax.swing.JPanel {
         descLbl = new javax.swing.JLabel();
         descTxt = new javax.swing.JTextField();
         stockLbl = new javax.swing.JLabel();
-        stockTxt = new javax.swing.JTextField();
         dispTxt = new javax.swing.JTextField();
         dispLbl = new javax.swing.JLabel();
         ejemLbl = new javax.swing.JLabel();
         ejemTxt = new javax.swing.JTextField();
         button = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        title.setText("Subir nuevo Libro");
+        title.setText("Nueva consulta medica");
 
-        titleLbl.setText("Título");
+        titleLbl.setText("Nombre");
 
-        dateLbl.setText("Fecha de Publicación");
+        dateLbl.setText("Dueño");
 
-        authorLbl.setText("Autor");
+        authorLbl.setText("Edad");
 
-        catLbl.setText("Categoría");
-
-        edLbl.setText("Edición");
+        catLbl.setText("Descripcion");
 
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setPreferredSize(new java.awt.Dimension(200, 10));
 
-        langLbl.setText("Idioma");
+        langLbl.setText("Edad");
 
         langTxt.setToolTipText("");
 
-        pagsLbl.setText("Páginas");
+        pagsLbl.setText("Tratamiento");
 
         pagsTxt.setToolTipText("");
 
-        descLbl.setText("Descripción");
+        descLbl.setText("Diagnostico");
 
         descTxt.setToolTipText("");
 
-        stockLbl.setText("Stock");
+        stockLbl.setText("Medicacion");
         stockLbl.setToolTipText("");
-
-        stockTxt.setToolTipText("");
 
         dispTxt.setToolTipText("");
 
-        dispLbl.setText("Disponibles");
+        dispLbl.setText("Estado");
 
-        ejemLbl.setText("Ejemplares");
+        ejemLbl.setText("Medicacion");
 
         ejemTxt.setToolTipText("");
 
@@ -110,6 +104,8 @@ public class nuevaConsulta extends javax.swing.JPanel {
                 buttonActionPerformed(evt);
             }
         });
+
+        jRadioButton1.setText("jRadioButton1");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -135,11 +131,7 @@ public class nuevaConsulta extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(dateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(161, 161, 161))
-                            .addComponent(dateTxt)
-                            .addComponent(edTxt, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(bgLayout.createSequentialGroup()
-                                .addComponent(edLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(227, 227, 227)))
+                            .addComponent(dateTxt))
                         .addGap(68, 68, 68)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
@@ -159,11 +151,12 @@ public class nuevaConsulta extends javax.swing.JPanel {
                             .addComponent(descTxt)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(stockTxt)
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addComponent(stockLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(94, 94, 94)))
-                                .addGap(20, 20, 20)
+                                        .addGap(114, 114, 114))
+                                    .addGroup(bgLayout.createSequentialGroup()
+                                        .addComponent(jRadioButton1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addComponent(dispLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -202,9 +195,9 @@ public class nuevaConsulta extends javax.swing.JPanel {
                             .addComponent(stockLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dispLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(stockTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dispTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(dispTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(9, 9, 9)
                         .addComponent(ejemLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -227,11 +220,8 @@ public class nuevaConsulta extends javax.swing.JPanel {
                         .addGap(11, 11, 11)
                         .addComponent(catLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(catTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(edLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(edTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(catTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)))
                 .addGap(22, 22, 22))
         );
 
@@ -250,7 +240,7 @@ public class nuevaConsulta extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 789, Short.MAX_VALUE)
+            .addGap(0, 799, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -286,18 +276,16 @@ public class nuevaConsulta extends javax.swing.JPanel {
     private javax.swing.JTextField descTxt;
     private javax.swing.JLabel dispLbl;
     private javax.swing.JTextField dispTxt;
-    private javax.swing.JLabel edLbl;
-    private javax.swing.JTextField edTxt;
     private javax.swing.JLabel ejemLbl;
     private javax.swing.JTextField ejemTxt;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel langLbl;
     private javax.swing.JTextField langTxt;
     private javax.swing.JLabel pagsLbl;
     private javax.swing.JTextField pagsTxt;
     private javax.swing.JLabel stockLbl;
-    private javax.swing.JTextField stockTxt;
     private javax.swing.JLabel title;
     private javax.swing.JLabel titleLbl;
     private javax.swing.JTextField titleTxt;

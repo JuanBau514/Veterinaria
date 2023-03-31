@@ -277,7 +277,7 @@ public class nuevaConsulta extends javax.swing.JPanel {
 
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
         ModeloNuevaConsulta u = new ModeloNuevaConsulta();
-
+        modeloNuevaConsultas.clear();
         u.setId(modeloNuevaConsultas.size());
         u.setNombremascota(mascotatxtfield.getText());
         u.setNombredueño(dueñotxtfield.getText());
@@ -345,8 +345,10 @@ public void guardarArchivo(File archivo) {
         pw = new PrintWriter(fichero);
 
         for (ModeloNuevaConsulta u : modeloNuevaConsultas) {
+            String linea = "";
             ultimoId++; // incrementar el identificador
-            String linea = ultimoId + "," + u.getNombremascota() + "," + u.getNombredueño() + "," + u.getEdaddueño() + "," + u.getEdadmascota() + "," + u.getDescripcion() + "," + u.getTratamiento() + "," + u.getDiagnostico() + "," + u.getEstado() + "," + u.getMedicacion();
+            linea = ultimoId + "," + u.getNombremascota() + "," + u.getNombredueño() + "," + u.getEdaddueño() + "," + u.getEdadmascota() + "," + u.getDescripcion() + "," + u.getTratamiento() + "," + u.getDiagnostico() + "," + u.getEstado() + "," + u.getMedicacion();
+            
             pw.println(linea);
         }
     } catch (Exception ex) {

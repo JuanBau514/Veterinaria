@@ -212,7 +212,7 @@ public class nuevoUsuario extends javax.swing.JPanel {
 
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
                 ModeloNuevoUsuario u = new ModeloNuevoUsuario();
-
+         modeloNuevoUsuarios.clear();
         u.setId(modeloNuevoUsuarios.size());
         u.setNombre(nombretxt.getText());
         u.setApellidomaterno(apMtxt.getText());
@@ -232,7 +232,7 @@ public class nuevoUsuario extends javax.swing.JPanel {
        
 
         // crea un objeto File para guardar el archivo en formato CSV
-        File archivo = new File("./datos.csv");
+        File archivo = new File("./datos1.csv");
 
 // verifica si el archivo ya existe
         if (!archivo.exists()) {
@@ -275,8 +275,9 @@ public void guardarArchivo(File archivo) {
         pw = new PrintWriter(fichero);
 
         for (ModeloNuevoUsuario u : modeloNuevoUsuarios) {
+            String linea = "";
             ultimoId++; // incrementar el identificador
-            String linea = ultimoId + "," + u.getNombre() + "," + u.getApellidomaterno() + "," + u.getApellidopaterno() + "," + u.getDomicilio() + "," + u.getTelefono() + "," + u.getCantidadmascotas();
+            linea = ultimoId + "," + u.getNombre() + "," + u.getApellidomaterno() + "," + u.getApellidopaterno() + "," + u.getDomicilio() + "," + u.getTelefono() + "," + u.getCantidadmascotas();
             pw.println(linea);
         }
     } catch (Exception ex) {

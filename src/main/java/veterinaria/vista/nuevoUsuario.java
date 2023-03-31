@@ -4,15 +4,27 @@
  */
 package veterinaria.vista;
 
+import ModeloVeterinaria.ModeloNuevaConsulta;
+import ModeloVeterinaria.ModeloNuevoUsuario;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
+import java.util.LinkedList;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author juanpbaucl514
  */
 public class nuevoUsuario extends javax.swing.JPanel {
 
-    /**
-     * Creates new form nuevoUsuario
-     */
+    LinkedList<ModeloNuevoUsuario> modeloNuevoUsuarios = new LinkedList<>();
+    
     public nuevoUsuario() {
         initComponents();
     }
@@ -30,19 +42,19 @@ public class nuevoUsuario extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         nameLbl = new javax.swing.JLabel();
-        nameTxt = new javax.swing.JTextField();
+        nombretxt = new javax.swing.JTextField();
         apPLbl = new javax.swing.JLabel();
-        apPTxt = new javax.swing.JTextField();
+        apPtxt = new javax.swing.JTextField();
         apMLbl = new javax.swing.JLabel();
-        apMTxt = new javax.swing.JTextField();
+        apMtxt = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         domLbl = new javax.swing.JLabel();
-        domTxt = new javax.swing.JTextField();
+        domtxt = new javax.swing.JTextField();
         button = new javax.swing.JButton();
         phoneLbl = new javax.swing.JLabel();
-        phoneTxt = new javax.swing.JTextField();
+        phonetxt = new javax.swing.JTextField();
         phoneLbl1 = new javax.swing.JLabel();
-        phoneTxt1 = new javax.swing.JTextField();
+        petsnumbertxt = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -62,7 +74,7 @@ public class nuevoUsuario extends javax.swing.JPanel {
 
         domLbl.setText("Domicilio");
 
-        domTxt.setToolTipText("");
+        domtxt.setToolTipText("");
 
         button.setBackground(new java.awt.Color(18, 90, 173));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -78,11 +90,11 @@ public class nuevoUsuario extends javax.swing.JPanel {
 
         phoneLbl.setText("Teléfono");
 
-        phoneTxt.setToolTipText("");
+        phonetxt.setToolTipText("");
 
         phoneLbl1.setText("Cantidad de mascotas");
 
-        phoneTxt1.setToolTipText("");
+        petsnumbertxt.setToolTipText("");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -96,30 +108,30 @@ public class nuevoUsuario extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(nameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(223, 223, 223))
-                            .addComponent(nameTxt)
+                            .addComponent(nombretxt)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(apPLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(182, 182, 182))
-                            .addComponent(apPTxt)
+                            .addComponent(apPtxt)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(apMLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(180, 180, 180))
-                            .addComponent(apMTxt))
+                            .addComponent(apMtxt))
                         .addGap(68, 68, 68)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(domTxt)
+                            .addComponent(domtxt)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(domLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(220, 220, 220))
-                            .addComponent(phoneTxt)
+                            .addComponent(phonetxt)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(phoneLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(218, 218, 218))
                             .addComponent(button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(phoneLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(phoneTxt1, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(petsnumbertxt, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(72, 72, 72))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -133,30 +145,30 @@ public class nuevoUsuario extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addComponent(nameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 16, Short.MAX_VALUE)
+                        .addComponent(nameLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombretxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(apPLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 16, Short.MAX_VALUE)
+                        .addComponent(apPLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(apPTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(apPtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(apMLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(apMTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(apMtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(170, 170, 170))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(domLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(domTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(domtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(phoneLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(phoneTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(phonetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(phoneLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(phoneTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(petsnumbertxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
                         .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45))
@@ -199,27 +211,114 @@ public class nuevoUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
+                ModeloNuevoUsuario u = new ModeloNuevoUsuario();
 
+        u.setId(modeloNuevoUsuarios.size());
+        u.setNombre(nombretxt.getText());
+        u.setApellidomaterno(apMtxt.getText());
+        u.setApellidopaterno(apPtxt.getText());
+        u.setDomicilio(domtxt.getText());
+        u.setTelefono(parseInt(phonetxt.getText()));
+        u.setCantidadmascotas(parseInt(petsnumbertxt.getText()));
+
+        modeloNuevoUsuarios.add(u);
+
+        nombretxt.setText("");
+        apMtxt.setText("");
+        apPtxt.setText("");
+        domtxt.setText("");
+        phonetxt.setText("");
+        petsnumbertxt.setText("");
+       
+
+        // crea un objeto File para guardar el archivo en formato CSV
+        File archivo = new File("./datos.csv");
+
+// verifica si el archivo ya existe
+        if (!archivo.exists()) {
+            try {
+                // si el archivo no existe, intenta crearlo
+                archivo.createNewFile();
+            } catch (IOException e) {
+                // maneja cualquier excepción que pueda ocurrir al intentar crear el archivo
+                e.printStackTrace();
+            }
+        }
+
+// llama al método guardarArchivo() para guardar los datos en el archivo
+        guardarArchivo(archivo);
+
+
+    }                                      
+public void guardarArchivo(File archivo) {
+    FileWriter fichero = null;
+    PrintWriter pw = null;
+    int ultimoId = 0;
+
+    try {
+        // Leer el archivo para determinar el último identificador utilizado
+        if (archivo.exists()) {
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] campos = linea.split(",");
+                int id = Integer.parseInt(campos[0]);
+                if (id > ultimoId) {
+                    ultimoId = id;
+                }
+            }
+            br.close();
+        }
+
+        // Escribir los registros nuevos
+        fichero = new FileWriter(archivo, true);
+        pw = new PrintWriter(fichero);
+
+        for (ModeloNuevoUsuario u : modeloNuevoUsuarios) {
+            ultimoId++; // incrementar el identificador
+            String linea = ultimoId + "," + u.getNombre() + "," + u.getApellidomaterno() + "," + u.getApellidopaterno() + "," + u.getDomicilio() + "," + u.getTelefono() + "," + u.getCantidadmascotas();
+            pw.println(linea);
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    } finally {
+        try {
+            if (fichero != null) {
+                fichero.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     }//GEN-LAST:event_buttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel apMLbl;
-    private javax.swing.JTextField apMTxt;
+    private javax.swing.JTextField apMtxt;
     private javax.swing.JLabel apPLbl;
-    private javax.swing.JTextField apPTxt;
+    private javax.swing.JTextField apPtxt;
     private javax.swing.JPanel bg;
     private javax.swing.JButton button;
     private javax.swing.JLabel domLbl;
-    private javax.swing.JTextField domTxt;
+    private javax.swing.JTextField domtxt;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel nameLbl;
-    private javax.swing.JTextField nameTxt;
+    private javax.swing.JTextField nombretxt;
+    private javax.swing.JTextField petsnumbertxt;
     private javax.swing.JLabel phoneLbl;
     private javax.swing.JLabel phoneLbl1;
-    private javax.swing.JTextField phoneTxt;
-    private javax.swing.JTextField phoneTxt1;
+    private javax.swing.JTextField phonetxt;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    public LinkedList<ModeloNuevoUsuario> getModeloNuevoUsuarios() {
+        return modeloNuevoUsuarios;
+    }
+
+    public void setModeloNuevoUsuarios(LinkedList<ModeloNuevoUsuario> modeloNuevoUsuarios) {
+        this.modeloNuevoUsuarios = modeloNuevoUsuarios;
+    }
+    
 }

@@ -36,7 +36,7 @@ public class InicioApp extends javax.swing.JPanel {
         jLabel7.putClientProperty("FlatLaf.styleClass", "large");
         jLabel7.setForeground(Color.black);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,7 +58,7 @@ public class InicioApp extends javax.swing.JPanel {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        title.setText("Bienvenido a minitos la mejor Veterinaria de la ciudad :D");
+        title.setText("Bienvenido a mininos la mejor Veterinaria de la ciudad :D");
 
         jLabel2.setText(" Este sistema de gestion guardara los datos ");
 
@@ -145,4 +145,5 @@ public class InicioApp extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
-}
+
+} 

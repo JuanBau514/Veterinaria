@@ -4,11 +4,30 @@
  */
 package veterinaria.vista;
 
+import ModeloVeterinaria.ModeloNuevaConsulta;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
+import static java.lang.reflect.Array.get;
+import static java.nio.file.Paths.get;
+import java.util.LinkedList;
+import javax.swing.JFileChooser;
+import static javax.swing.UIManager.get;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import veterinaria.vista.nuevaConsulta;
+
 /**
  *
  * @author juanpbaucl514
  */
 public class HistorialClinico extends javax.swing.JPanel {
+
+    LinkedList<ModeloNuevaConsulta> modeloNuevaConsultas = new LinkedList<>();
 
     /**
      * Creates new form HistorialClinico
@@ -204,15 +223,58 @@ public class HistorialClinico extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-      
+        File archivo = new File("./datos.csv");
+        cargarArchivo(archivo);
     }//GEN-LAST:event_searchButtonActionPerformed
+    public void cargarArchivo(File archivo) {
+        FileReader fr = null;
+        BufferedReader br = null;
+
+        try {
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+                String arreglo[] = linea.split(",");
+                if (arreglo.length == 10) {
+                    ModeloNuevaConsulta u = new ModeloNuevaConsulta();
+                    u.setId(Integer.parseInt(arreglo[0]));
+                    u.setNombremascota(arreglo[1]);
+                    u.setNombredueño(arreglo[2]);
+                    u.setEdaddueño(parseInt(arreglo[3]));
+                    u.setEdadmascota(parseInt(arreglo[4]));
+                    u.setDescripcion(arreglo[5]);
+                    u.setTratamiento(arreglo[6]);
+                    u.setDiagnostico(arreglo[7]);
+                    u.setEstado(arreglo[8]);
+                    u.setMedicacion(arreglo[9]);
+                    modeloNuevaConsultas.add(u);
+
+                }
+
+            }
+            llenartabla();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (fr != null) {
+                    fr.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-     
+
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-      
+
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
@@ -235,4 +297,26 @@ public class HistorialClinico extends javax.swing.JPanel {
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    private void llenartabla() {
+        DefaultTableModel mD = new DefaultTableModel(new String[]{"ID", "Nombremascota", "Nombredueño", "Edaddueño", "Edadmascota", "Descripcion", "Tratamiento", "Diagnostico", "Estado", "Medicacion"}, modeloNuevaConsultas.size());
+
+        jTable1.setModel(mD);
+        TableModel tm = jTable1.getModel();
+        
+        for (int i = 0; i < modeloNuevaConsultas.size(); i++) {
+            ModeloNuevaConsulta u = modeloNuevaConsultas.get(i);
+            tm.setValueAt(u.getId(), i, 0);
+            tm.setValueAt(u.getNombredueño(), i, 1);
+            tm.setValueAt(u.getNombremascota(), i, 2);
+            tm.setValueAt(u.getEdaddueño(), i, 3);
+            tm.setValueAt(u.getEdadmascota(), i, 4);
+            tm.setValueAt(u.getDescripcion(), i, 5);
+            tm.setValueAt(u.getTratamiento(), i, 6);
+            tm.setValueAt(u.getEstado(), i, 7);
+            tm.setValueAt(u.getDiagnostico(), i, 8);
+            tm.setValueAt(u.getMedicacion(), i, 9);
+        }
+    }
+
 }

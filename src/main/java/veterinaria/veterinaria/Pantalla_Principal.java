@@ -15,6 +15,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
@@ -40,14 +41,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         mostrarPanel(new InicioApp());
     }
 
-    public static void mostrarPanel(JPanel panel){
+    public void mostrarPanel(JPanel panel){
         panel.setSize(750, 430);
         panel.setLocation(0,0);
 
-        contenido.removeAll();
-        contenido.add(panel, BorderLayout.CENTER);
-        contenido.revalidate();
-        contenido.repaint();
+      contenido.removeAll();
+      contenido.add(panel, BorderLayout.CENTER);
+      contenido.revalidate();
+      contenido.repaint(); 
       
     }
     
@@ -116,7 +117,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         Principal.setText("Principal");
         Principal.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(0, 0, 0)));
         Principal.setBorderPainted(false);
-        Principal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Principal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Principal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Principal.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         Principal.setIconTextGap(30);
@@ -134,7 +135,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         Historia.setText("Historia Clinica");
         Historia.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(0, 0, 0)));
         Historia.setBorderPainted(false);
-        Historia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Historia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Historia.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Historia.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         Historia.setIconTextGap(30);
@@ -152,7 +153,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         newConsulta.setText("Nueva Consulta");
         newConsulta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(0, 0, 0)));
         newConsulta.setBorderPainted(false);
-        newConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         newConsulta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         newConsulta.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         newConsulta.setIconTextGap(30);
@@ -170,7 +171,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         newUsuario.setText("Nuevo Usuario");
         newUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(0, 0, 0)));
         newUsuario.setBorderPainted(false);
-        newUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         newUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         newUsuario.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         newUsuario.setIconTextGap(30);
@@ -188,7 +189,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         newUsuario1.setText("Lista Usuarios");
         newUsuario1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 30, 1, 1, new java.awt.Color(0, 0, 0)));
         newUsuario1.setBorderPainted(false);
-        newUsuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        newUsuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         newUsuario1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         newUsuario1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         newUsuario1.setIconTextGap(30);
@@ -205,9 +206,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Usos1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(appName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MenuLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(appName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Historia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -218,11 +221,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(appName, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Usos1))
-                .addGap(33, 33, 33)
+                .addContainerGap()
+                .addComponent(appName, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Usos1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(161, 161, 161)
                 .addComponent(Principal, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Historia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,7 +235,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(newUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         Titulo.setBackground(new java.awt.Color(0, 102, 153));
@@ -249,7 +252,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(351, 351, 351)
                 .addGroup(TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TituloLayout.createSequentialGroup()
-                        .addComponent(Usos, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                        .addComponent(Usos, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
                         .addGap(503, 503, 503))
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49))
@@ -257,11 +260,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         TituloLayout.setVerticalGroup(
             TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TituloLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addComponent(Usos)
                 .addGap(18, 18, 18)
-                .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         contenido.setBackground(new java.awt.Color(255, 255, 255));
@@ -303,7 +305,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(39, 39, 39)
                 .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -324,6 +326,39 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getPrincipal() {
+        return Principal;
+    }
+
+    public void setPrincipal(JButton Principal) {
+        this.Principal = Principal;
+    }
+
+    public JButton getNewConsulta() {
+        return newConsulta;
+    }
+
+    public void setNewConsulta(JButton newConsulta) {
+        this.newConsulta = newConsulta;
+    }
+
+    public JButton getNewUsuario() {
+        return newUsuario;
+    }
+
+    public void setNewUsuario(JButton newUsuario) {
+        this.newUsuario = newUsuario;
+    }
+
+    public JButton getHistoria() {
+        return Historia;
+    }
+
+    public void setHistoria(JButton Historia) {
+        this.Historia = Historia;
+    }
+    
+    
     private void PrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrincipalActionPerformed
         // Inicializacion del compoente de la ventana principal
         mostrarPanel(new InicioApp());
@@ -375,7 +410,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Usos;
     private javax.swing.JLabel Usos1;
     private javax.swing.JLabel appName;
-    private static javax.swing.JPanel contenido;
+    private javax.swing.JPanel contenido;
     private javax.swing.JButton newConsulta;
     private javax.swing.JButton newUsuario;
     private javax.swing.JButton newUsuario1;

@@ -4,15 +4,27 @@
  */
 package veterinaria.vista;
 
+import ModeloVeterinaria.ModeloNuevaConsulta;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
+import java.util.LinkedList;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author juanpbaucl514
  */
 public class nuevaConsulta extends javax.swing.JPanel {
 
-    /**
-     * Creates new form nuevaConsulta
-     */
+    LinkedList<ModeloNuevaConsulta> modeloNuevaConsultas = new LinkedList<>();
+
     public nuevaConsulta() {
         initComponents();
     }
@@ -30,25 +42,25 @@ public class nuevaConsulta extends javax.swing.JPanel {
         bg = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         titleLbl = new javax.swing.JLabel();
-        titleTxt = new javax.swing.JTextField();
+        mascotatxtfield = new javax.swing.JTextField();
         dateLbl = new javax.swing.JLabel();
-        dateTxt = new javax.swing.JTextField();
+        dueñotxtfield = new javax.swing.JTextField();
         authorLbl = new javax.swing.JLabel();
-        authorTxt = new javax.swing.JTextField();
+        edadmascotatxtfield = new javax.swing.JTextField();
         catLbl = new javax.swing.JLabel();
-        catTxt = new javax.swing.JTextField();
+        descripciontxtfield = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         langLbl = new javax.swing.JLabel();
-        langTxt = new javax.swing.JTextField();
+        edaddueñotxtfield = new javax.swing.JTextField();
         pagsLbl = new javax.swing.JLabel();
-        pagsTxt = new javax.swing.JTextField();
+        tratamientotxtfield = new javax.swing.JTextField();
         descLbl = new javax.swing.JLabel();
-        descTxt = new javax.swing.JTextField();
+        diagnosticotxtfield = new javax.swing.JTextField();
         stockLbl = new javax.swing.JLabel();
-        dispTxt = new javax.swing.JTextField();
+        estadotxtfield = new javax.swing.JTextField();
         dispLbl = new javax.swing.JLabel();
         ejemLbl = new javax.swing.JLabel();
-        ejemTxt = new javax.swing.JTextField();
+        medicaciontxtfield = new javax.swing.JTextField();
         button = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
 
@@ -58,11 +70,11 @@ public class nuevaConsulta extends javax.swing.JPanel {
 
         title.setText("Nueva consulta medica");
 
-        titleLbl.setText("Nombre");
+        titleLbl.setText("Nombre de la mascota");
 
-        dateLbl.setText("Dueño");
+        dateLbl.setText("Nombre del Dueño");
 
-        authorLbl.setText("Edad");
+        authorLbl.setText("Edad de la mascota");
 
         catLbl.setText("Descripcion");
 
@@ -70,28 +82,28 @@ public class nuevaConsulta extends javax.swing.JPanel {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setPreferredSize(new java.awt.Dimension(200, 10));
 
-        langLbl.setText("Edad");
+        langLbl.setText("Edad del dueño");
 
-        langTxt.setToolTipText("");
+        edaddueñotxtfield.setToolTipText("");
 
         pagsLbl.setText("Tratamiento");
 
-        pagsTxt.setToolTipText("");
+        tratamientotxtfield.setToolTipText("");
 
         descLbl.setText("Diagnostico");
 
-        descTxt.setToolTipText("");
+        diagnosticotxtfield.setToolTipText("");
 
         stockLbl.setText("Medicacion");
         stockLbl.setToolTipText("");
 
-        dispTxt.setToolTipText("");
+        estadotxtfield.setToolTipText("");
 
         dispLbl.setText("Estado");
 
         ejemLbl.setText("Medicacion");
 
-        ejemTxt.setToolTipText("");
+        medicaciontxtfield.setToolTipText("");
 
         button.setBackground(new java.awt.Color(18, 90, 173));
         button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -106,6 +118,11 @@ public class nuevaConsulta extends javax.swing.JPanel {
         });
 
         jRadioButton1.setText("jRadioButton1");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
@@ -116,8 +133,8 @@ public class nuevaConsulta extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(catTxt)
-                            .addComponent(authorTxt)
+                            .addComponent(descripciontxtfield)
+                            .addComponent(edadmascotatxtfield)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(authorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(233, 233, 233))
@@ -127,20 +144,20 @@ public class nuevaConsulta extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(titleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(234, 234, 234))
-                            .addComponent(titleTxt)
+                            .addComponent(mascotatxtfield)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(dateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(161, 161, 161))
-                            .addComponent(dateTxt))
+                            .addComponent(dueñotxtfield))
                         .addGap(68, 68, 68)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(langTxt)
+                            .addComponent(edaddueñotxtfield)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(langLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(228, 228, 228))
-                            .addComponent(pagsTxt)
+                            .addComponent(tratamientotxtfield)
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(pagsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(223, 223, 223))
@@ -148,7 +165,7 @@ public class nuevaConsulta extends javax.swing.JPanel {
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(descLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(206, 206, 206))
-                            .addComponent(descTxt)
+                            .addComponent(diagnosticotxtfield)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(bgLayout.createSequentialGroup()
@@ -161,11 +178,11 @@ public class nuevaConsulta extends javax.swing.JPanel {
                                     .addGroup(bgLayout.createSequentialGroup()
                                         .addComponent(dispLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(67, 67, 67))
-                                    .addComponent(dispTxt)))
+                                    .addComponent(estadotxtfield)))
                             .addGroup(bgLayout.createSequentialGroup()
                                 .addComponent(ejemLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(208, 208, 208))
-                            .addComponent(ejemTxt))
+                            .addComponent(medicaciontxtfield))
                         .addGap(72, 72, 72))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,46 +198,46 @@ public class nuevaConsulta extends javax.swing.JPanel {
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(langLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(langTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edaddueñotxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pagsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pagsTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tratamientotxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(descLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(descTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(diagnosticotxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(stockLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dispLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dispTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                            .addComponent(estadotxtfield, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                             .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(9, 9, 9)
                         .addComponent(ejemLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ejemTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(medicaciontxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(button, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(bgLayout.createSequentialGroup()
                         .addComponent(titleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(titleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mascotatxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dueñotxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(authorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(authorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edadmascotatxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
                         .addComponent(catLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(catTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(descripciontxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)))
                 .addGap(22, 22, 22))
         );
@@ -240,7 +257,7 @@ public class nuevaConsulta extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 799, Short.MAX_VALUE)
+            .addGap(0, 890, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -259,35 +276,132 @@ public class nuevaConsulta extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
-        
+        ModeloNuevaConsulta u = new ModeloNuevaConsulta();
+
+        u.setId(modeloNuevaConsultas.size());
+        u.setNombremascota(mascotatxtfield.getText());
+        u.setNombredueño(dueñotxtfield.getText());
+        u.setEdadmascota(parseInt(edadmascotatxtfield.getText()));
+        u.setDescripcion(descripciontxtfield.getText());
+        u.setEdaddueño(parseInt(edaddueñotxtfield.getText()));
+        u.setTratamiento(tratamientotxtfield.getText());
+        u.setDiagnostico(diagnosticotxtfield.getText());
+        u.setEstado(estadotxtfield.getText());
+        u.setMedicacion(medicaciontxtfield.getText());
+
+        modeloNuevaConsultas.add(u);
+
+        mascotatxtfield.setText("");
+        dueñotxtfield.setText("");
+        edadmascotatxtfield.setText("");
+        descripciontxtfield.setText("");
+        edaddueñotxtfield.setText("");
+        tratamientotxtfield.setText("");
+        diagnosticotxtfield.setText("");
+        estadotxtfield.setText("");
+        medicaciontxtfield.setText("");
+
+        // crea un objeto File para guardar el archivo en formato CSV
+        File archivo = new File("./datos.csv");
+
+// verifica si el archivo ya existe
+        if (!archivo.exists()) {
+            try {
+                // si el archivo no existe, intenta crearlo
+                archivo.createNewFile();
+            } catch (IOException e) {
+                // maneja cualquier excepción que pueda ocurrir al intentar crear el archivo
+                e.printStackTrace();
+            }
+        }
+
+// llama al método guardarArchivo() para guardar los datos en el archivo
+        guardarArchivo(archivo);
+
+
     }//GEN-LAST:event_buttonActionPerformed
+public void guardarArchivo(File archivo) {
+    FileWriter fichero = null;
+    PrintWriter pw = null;
+    int ultimoId = 0;
+
+    try {
+        // Leer el archivo para determinar el último identificador utilizado
+        if (archivo.exists()) {
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] campos = linea.split(",");
+                int id = Integer.parseInt(campos[0]);
+                if (id > ultimoId) {
+                    ultimoId = id;
+                }
+            }
+            br.close();
+        }
+
+        // Escribir los registros nuevos
+        fichero = new FileWriter(archivo, true);
+        pw = new PrintWriter(fichero);
+
+        for (ModeloNuevaConsulta u : modeloNuevaConsultas) {
+            ultimoId++; // incrementar el identificador
+            String linea = ultimoId + "," + u.getNombremascota() + "," + u.getNombredueño() + "," + u.getEdaddueño() + "," + u.getEdadmascota() + "," + u.getDescripcion() + "," + u.getTratamiento() + "," + u.getDiagnostico() + "," + u.getEstado() + "," + u.getMedicacion();
+            pw.println(linea);
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    } finally {
+        try {
+            if (fichero != null) {
+                fichero.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel authorLbl;
-    private javax.swing.JTextField authorTxt;
     private javax.swing.JPanel bg;
     private javax.swing.JButton button;
     private javax.swing.JLabel catLbl;
-    private javax.swing.JTextField catTxt;
     private javax.swing.JLabel dateLbl;
-    private javax.swing.JTextField dateTxt;
     private javax.swing.JLabel descLbl;
-    private javax.swing.JTextField descTxt;
+    private javax.swing.JTextField descripciontxtfield;
+    private javax.swing.JTextField diagnosticotxtfield;
     private javax.swing.JLabel dispLbl;
-    private javax.swing.JTextField dispTxt;
+    private javax.swing.JTextField dueñotxtfield;
+    private javax.swing.JTextField edaddueñotxtfield;
+    private javax.swing.JTextField edadmascotatxtfield;
     private javax.swing.JLabel ejemLbl;
-    private javax.swing.JTextField ejemTxt;
+    private javax.swing.JTextField estadotxtfield;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel langLbl;
-    private javax.swing.JTextField langTxt;
+    private javax.swing.JTextField mascotatxtfield;
+    private javax.swing.JTextField medicaciontxtfield;
     private javax.swing.JLabel pagsLbl;
-    private javax.swing.JTextField pagsTxt;
     private javax.swing.JLabel stockLbl;
     private javax.swing.JLabel title;
     private javax.swing.JLabel titleLbl;
-    private javax.swing.JTextField titleTxt;
+    private javax.swing.JTextField tratamientotxtfield;
     // End of variables declaration//GEN-END:variables
+
+    public LinkedList<ModeloNuevaConsulta> getModeloNuevaConsultas() {
+        return modeloNuevaConsultas;
+    }
+
+    public void setModeloNuevaConsultas(LinkedList<ModeloNuevaConsulta> modeloNuevaConsultas) {
+        this.modeloNuevaConsultas = modeloNuevaConsultas;
+    }
+
 }

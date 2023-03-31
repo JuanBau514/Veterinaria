@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="799" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="890" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -75,8 +75,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="catTxt" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="authorTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="descripciontxtfield" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="edadmascotatxtfield" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="authorLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="233" pref="233" max="-2" attributes="0"/>
@@ -89,23 +89,23 @@
                                       <Component id="titleLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="234" pref="234" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="titleTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="mascotatxtfield" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="dateLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="161" pref="161" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="dateTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="dueñotxtfield" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="langTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="edaddueñotxtfield" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="langLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="228" pref="228" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="pagsTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tratamientotxtfield" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="pagsLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="223" pref="223" max="-2" attributes="0"/>
@@ -115,7 +115,7 @@
                                       <Component id="descLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="206" pref="206" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="descTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="diagnosticotxtfield" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
@@ -132,14 +132,14 @@
                                               <Component id="dispLbl" max="32767" attributes="0"/>
                                               <EmptySpace min="67" pref="67" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="dispTxt" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="estadotxtfield" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="ejemLbl" max="32767" attributes="0"/>
                                       <EmptySpace min="208" pref="208" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="ejemTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="medicaciontxtfield" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
@@ -161,15 +161,15 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="langLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="langTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="edaddueñotxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="pagsLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="pagsTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="tratamientotxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="descLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="descTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="diagnosticotxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="stockLbl" alignment="3" max="32767" attributes="0"/>
@@ -177,13 +177,13 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="dispTxt" pref="30" max="32767" attributes="0"/>
+                                  <Component id="estadotxtfield" pref="30" max="32767" attributes="0"/>
                                   <Component id="jRadioButton1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="ejemLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="ejemTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="medicaciontxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Component id="button" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
@@ -191,19 +191,19 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="titleLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="titleTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="mascotatxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="dateLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="dateTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="dueñotxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="authorLbl" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="authorTxt" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="edadmascotatxtfield" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                               <Component id="catLbl" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="catTxt" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="descripciontxtfield" min="-2" pref="76" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -220,31 +220,31 @@
             </Component>
             <Component class="javax.swing.JLabel" name="titleLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
+                <Property name="text" type="java.lang.String" value="Nombre de la mascota"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="titleTxt">
+            <Component class="javax.swing.JTextField" name="mascotatxtfield">
             </Component>
             <Component class="javax.swing.JLabel" name="dateLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Due&#xf1;o"/>
+                <Property name="text" type="java.lang.String" value="Nombre del Due&#xf1;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="dateTxt">
+            <Component class="javax.swing.JTextField" name="due&#xf1;otxtfield">
             </Component>
             <Component class="javax.swing.JLabel" name="authorLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Edad"/>
+                <Property name="text" type="java.lang.String" value="Edad de la mascota"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="authorTxt">
+            <Component class="javax.swing.JTextField" name="edadmascotatxtfield">
             </Component>
             <Component class="javax.swing.JLabel" name="catLbl">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Descripcion"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="catTxt">
+            <Component class="javax.swing.JTextField" name="descripciontxtfield">
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
               <Properties>
@@ -259,10 +259,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="langLbl">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Edad"/>
+                <Property name="text" type="java.lang.String" value="Edad del due&#xf1;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="langTxt">
+            <Component class="javax.swing.JTextField" name="edaddue&#xf1;otxtfield">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -272,7 +272,7 @@
                 <Property name="text" type="java.lang.String" value="Tratamiento"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="pagsTxt">
+            <Component class="javax.swing.JTextField" name="tratamientotxtfield">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -282,7 +282,7 @@
                 <Property name="text" type="java.lang.String" value="Diagnostico"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="descTxt">
+            <Component class="javax.swing.JTextField" name="diagnosticotxtfield">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -293,7 +293,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="dispTxt">
+            <Component class="javax.swing.JTextField" name="estadotxtfield">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -308,7 +308,7 @@
                 <Property name="text" type="java.lang.String" value="Medicacion"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="ejemTxt">
+            <Component class="javax.swing.JTextField" name="medicaciontxtfield">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
@@ -338,6 +338,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jRadioButton1"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

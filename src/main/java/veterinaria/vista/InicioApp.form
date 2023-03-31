@@ -92,7 +92,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="title">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Bienvenido a minitos la mejor Veterinaria de la ciudad :D"/>
+            <Property name="text" type="java.lang.String" value="Bienvenido a mininos la mejor Veterinaria de la ciudad :D"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">

@@ -44,7 +44,6 @@ public class HistorialUsuario extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         deleteButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
-        addButton = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -120,18 +119,6 @@ public class HistorialUsuario extends javax.swing.JPanel {
             }
         });
 
-        addButton.setBackground(new java.awt.Color(18, 90, 173));
-        addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        addButton.setForeground(new java.awt.Color(255, 255, 255));
-        addButton.setText("Nuevo");
-        addButton.setBorderPainted(false);
-        addButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -148,9 +135,7 @@ public class HistorialUsuario extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(bgLayout.createSequentialGroup()
-                                .addGap(427, 427, 427)
-                                .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(569, 569, 569)
                                 .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -174,8 +159,7 @@ public class HistorialUsuario extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteButton)
-                    .addComponent(editButton)
-                    .addComponent(addButton))
+                    .addComponent(editButton))
                 .addGap(25, 25, 25))
         );
 
@@ -239,11 +223,10 @@ public class HistorialUsuario extends javax.swing.JPanel {
                     u.setCantidadmascotas(parseInt(arreglo[6]));
                     
                     modeloNuevoUsuarios.add(u);
-
                 }
 
             }
-            llenartabla();
+            llenarTablaUsuario();
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -268,12 +251,8 @@ public class HistorialUsuario extends javax.swing.JPanel {
 
     }//GEN-LAST:event_editButtonActionPerformed
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-    }//GEN-LAST:event_addButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addButton;
     private javax.swing.JPanel bg;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton editButton;
@@ -285,7 +264,7 @@ public class HistorialUsuario extends javax.swing.JPanel {
     private javax.swing.JTextField userSearch;
     // End of variables declaration//GEN-END:variables
 private void llenartabla() {
-        DefaultTableModel mD = new DefaultTableModel(new String[]{"ID", "Nombremascota", "Nombredueño", "Edaddueño", "Edadmascota", "Descripcion", "Tratamiento", "Diagnostico", "Estado", "Medicacion"}, modeloNuevoUsuarios.size());
+        DefaultTableModel mD = new DefaultTableModel(new String[]{"ID", "Nombre mascota", "Nombre dueño", "Edad dueño", "Edad mascota", "Descripcion", "Tratamiento", "Diagnostico", "Estado", "Medicacion"}, modeloNuevoUsuarios.size());
 
         jTable1.setModel(mD);
         TableModel tm = jTable1.getModel();
@@ -301,4 +280,25 @@ private void llenartabla() {
             tm.setValueAt(u.getCantidadmascotas(), i, 6);
         }
     }
+
+
+private void llenarTablaUsuario() {
+    DefaultTableModel mD = new DefaultTableModel(new String[]{"ID", "Nombre", "Apellido paterno", "Apellido materno", "Domicilio", "Telefono", "Cantidad de mascotas"}, modeloNuevoUsuarios.size());
+
+    jTable1.setModel(mD);
+    TableModel tm = jTable1.getModel();
+
+    for (int i = 0; i < modeloNuevoUsuarios.size(); i++) {
+        ModeloNuevoUsuario u = modeloNuevoUsuarios.get(i);
+        tm.setValueAt(u.getId(), i, 0);
+        tm.setValueAt(u.getNombre(), i, 1);
+        tm.setValueAt(u.getApellidomaterno(), i, 2);
+        tm.setValueAt(u.getApellidopaterno(), i, 3);
+        tm.setValueAt(u.getDomicilio(), i, 4);
+        tm.setValueAt(u.getTelefono(), i, 5);
+        tm.setValueAt(u.getCantidadmascotas(), i, 6);
+    }
 }
+}
+
+

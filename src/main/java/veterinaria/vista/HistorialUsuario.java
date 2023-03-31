@@ -4,15 +4,24 @@
  */
 package veterinaria.vista;
 
+import ModeloVeterinaria.ModeloNuevaConsulta;
+import ModeloVeterinaria.ModeloNuevoUsuario;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import static java.lang.Integer.parseInt;
+import java.util.LinkedList;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author juanpbaucl514
  */
 public class HistorialUsuario extends javax.swing.JPanel {
 
-    /**
-     * Creates new form HistorialUsuario
-     */
+    LinkedList<ModeloNuevoUsuario> modeloNuevoUsuarios = new LinkedList<>();
+
     public HistorialUsuario() {
         initComponents();
     }
@@ -41,7 +50,7 @@ public class HistorialUsuario extends javax.swing.JPanel {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        title.setText("Usuaros // Dueños de mascotas");
+        title.setText("Usuarios // Dueños de mascotas");
 
         searchButton.setBackground(new java.awt.Color(18, 90, 173));
         searchButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -204,19 +213,59 @@ public class HistorialUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-   
+        File archivo = new File("./datos1.csv");
+        cargarArchivo(archivo);
     }//GEN-LAST:event_searchButtonActionPerformed
+    public void cargarArchivo(File archivo) {
+        FileReader fr = null;
+        BufferedReader br = null;
 
+        try {
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+                String arreglo[] = linea.split(",");
+                if (arreglo.length == 7) {
+                    ModeloNuevoUsuario u = new ModeloNuevoUsuario();
+                    u.setId(Integer.parseInt(arreglo[0]));
+                    u.setNombre(arreglo[1]);
+                    u.setApellidomaterno(arreglo[2]);
+                    u.setApellidopaterno(arreglo[3]);
+                    u.setDomicilio(arreglo[4]);
+                    u.setTelefono(parseInt(arreglo[5]));
+                    u.setCantidadmascotas(parseInt(arreglo[6]));
+                    
+                    modeloNuevoUsuarios.add(u);
+
+                }
+
+            }
+            llenartabla();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (fr != null) {
+                    fr.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
 
     }//GEN-LAST:event_jTable1MousePressed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-    
+
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-         
+
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
@@ -235,4 +284,21 @@ public class HistorialUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel title;
     private javax.swing.JTextField userSearch;
     // End of variables declaration//GEN-END:variables
+private void llenartabla() {
+        DefaultTableModel mD = new DefaultTableModel(new String[]{"ID", "Nombremascota", "Nombredueño", "Edaddueño", "Edadmascota", "Descripcion", "Tratamiento", "Diagnostico", "Estado", "Medicacion"}, modeloNuevoUsuarios.size());
+
+        jTable1.setModel(mD);
+        TableModel tm = jTable1.getModel();
+
+        for (int i = 0; i < modeloNuevoUsuarios.size(); i++) {
+            ModeloNuevoUsuario u = modeloNuevoUsuarios.get(i);
+            tm.setValueAt(u.getId(), i, 0);
+            tm.setValueAt(u.getNombre(), i, 1);
+            tm.setValueAt(u.getApellidomaterno(), i, 2);
+            tm.setValueAt(u.getApellidopaterno(), i, 3);
+            tm.setValueAt(u.getDomicilio(), i, 4);
+            tm.setValueAt(u.getTelefono(), i, 5);
+            tm.setValueAt(u.getCantidadmascotas(), i, 6);
+        }
+    }
 }
